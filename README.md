@@ -14,7 +14,7 @@ The following instructions assume that you have [Python 3.9](https://www.python.
 
 1. Clone this repository.
 
-`$ git clone https://github.com/AAWorks/baatimeblogs.git`
+`$ git clone git@github.com:theofahey/Ties__tfahey20_sging20_ekrechmer20_ilam21.git`
 
 2. Create a new virtual environment. Learn more about those [here](https://docs.python.org/3/tutorial/venv.html "Virtual Environments in Python").
 
