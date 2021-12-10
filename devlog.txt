@@ -6,8 +6,9 @@ P01
 Sample Entry: firstL -- TIMESTAMP\n ( e.g.: topherM -- 1999-12-31 23:59 )
 
 Begin Devlog:
-TheoF -- 12-9-2021
+TheoF -- 12-9-2021(11:00)
   Edited Devlog using input from other teams(diversified roles, edited order, Combined sections)
  SeanG -- 12-10-2021(08:37)
   Created index.html, looking to implement navbar, buttons, then style. 
-  
+ Theof -- 12-10-2021(8:39)
+  Added README
