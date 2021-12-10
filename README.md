@@ -1,12 +1,6 @@
-# Ties__tfahey20_sging20_ekrechmer20_ilam21
+# RadLibs by TIES (Theodore Fahey (PM), Ella Krechmer, Sean Ging, and Ivan Lam)
 
-## Roster
-Theodore Fahey(PM)<br>
-Ella Krechmer(Devo)<br>
-Sean Ging(Devo)<br>
-Ivan Lam(Devo)
-
-# App Description
+## App Description
 "RADLIBS", our innovative new project, strives to challenge our users minds with boggling word games. We use fun and inspiring themes and give our users the freedom to create stories of their own.
 
 ## Installation
