@@ -10,5 +10,7 @@ TheoF -- 12-9-2021(11:00)
   Edited Devlog using input from other teams(diversified roles, edited order, Combined sections)
  SeanG -- 12-10-2021(08:37)
   Created index.html, looking to implement navbar, buttons, then style. 
- Theof -- 12-10-2021(8:39)
+ TheoF -- 12-10-2021(8:39)
   Added README
+TheoF -- 12-13-2021(8:32) 
+  Basic Flask Skeleton and implemented Kanye_Rest API. 
