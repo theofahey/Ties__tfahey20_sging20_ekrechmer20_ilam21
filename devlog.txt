@@ -14,3 +14,5 @@ TheoF -- 12-9-2021(11:00)
   Added README
 TheoF -- 12-13-2021(8:32) 
   Basic Flask Skeleton and implemented Kanye_Rest API. 
+TheoF -- 12-13-2021(11:346)
+  Basic FBI API Implementation
