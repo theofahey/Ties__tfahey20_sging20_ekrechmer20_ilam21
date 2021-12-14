@@ -16,3 +16,7 @@ TheoF -- 12-13-2021(8:32)
   Basic Flask Skeleton and implemented Kanye_Rest API. 
 TheoF -- 12-13-2021(11:346)
   Basic FBI API Implementation
+SeanG -- 12-13-2021(08:39)
+  Added div and scenarios for the website.
+SeanG -- 12-14-2021(8:20)
+  Added random 
