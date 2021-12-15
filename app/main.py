@@ -27,8 +27,15 @@ def kanye_east():
     r2 = urllib.request.urlopen(w2).read()
     data = json.loads(r2)
     length = data['total']
-    print(data['items'][random.randrange(0,20)]['title'])
-    return render_template("fbi.html", kanye = x["quote"])
+    num = random.randrange(0,20)
+    num2 = random.randrange(0,20)
+    while(num2 == num):
+        num2 = random.randrange(0,20)
+    title1 = data['items'][num]['title']
+    hist1 = data['items'][num]['details']
+    title2 = data['items'][num2]['title']
+    hist2 = data['items'][num]['details']
+    return render_template("fbi.html", kanye = x["quote"], name = title1, crim = hist1,name2 = title2, crim2 = hist2)
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
