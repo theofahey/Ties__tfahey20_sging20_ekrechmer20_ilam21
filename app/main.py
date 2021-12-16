@@ -11,10 +11,6 @@ app = Flask(__name__)
 def start():
     return render_template("index.html");
 
-@app.route("/FBI-input", methods = ['GET', 'POST'])
-def kanye_east_fillin():
-    return render_template("madlibtemplate.html")
-
 @app.route("/FBI", methods = ['GET', 'POST'])
 def kanye_east():
     url = "https://api.kanye.rest"
@@ -36,6 +32,26 @@ def kanye_east():
     title2 = data['items'][num2]['title']
     hist2 = data['items'][num]['details']
     return render_template("fbi.html", kanye = x["quote"], name = title1, crim = hist1,name2 = title2, crim2 = hist2)
+@app.route("/Dog", methods = ['GET', 'POST'])
+def dogstory():
+    url = "https://dog.ceo/api/breeds/list/all"
+    w = urllib.request.Request(url,headers={'User-Agent': 'Mozilla/5.0'})
+    r = urllib.request.urlopen(w).read()
+    x = json.loads(r)
+    breedlist = x['message']
+    res = key, val = random.choice(list(breedlist.items()))
+    subreed1 = ""
+    if len(res[1]):
+        num = len(res[1]);
+        subreed1 = res[1][random.randrange(0,num)]
+
+
+    familybreed1 = res[0]
+
+    totalbreed1 = subreed1 + " " + familybreed1
+
+
+    return render_template("dog.html", breed1 = totalbreed1 )
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
