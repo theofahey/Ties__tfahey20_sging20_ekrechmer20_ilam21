@@ -8,15 +8,24 @@ Sample Entry: firstL -- TIMESTAMP\n ( e.g.: topherM -- 1999-12-31 23:59 )
 Begin Devlog:
 TheoF -- 12-9-2021(11:00)
   Edited Devlog using input from other teams(diversified roles, edited order, Combined sections)
- SeanG -- 12-10-2021(08:37)
+SeanG -- 12-10-2021(08:37)
   Created index.html, looking to implement navbar, buttons, then style. 
- TheoF -- 12-10-2021(8:39)
+TheoF -- 12-10-2021(8:39)
   Added README
+EllaK -- 12-13-2021 (8:41)
+  Wrote first two stories, and started third one
 TheoF -- 12-13-2021(8:32) 
   Basic Flask Skeleton and implemented Kanye_Rest API. 
-TheoF -- 12-13-2021(11:346)
+TheoF -- 12-13-2021(11:35)
   Basic FBI API Implementation
 SeanG -- 12-13-2021(08:39)
   Added div and scenarios for the website.
 SeanG -- 12-14-2021(8:20)
   Added random 
+EllaK -- 12-14-2021(8:41)
+  Finished last story
+  Modified some formatting
+  Created a page with a form, where users will write in their words
+  Created a working path from the home page to the story page for the first story
+EllaK -- 12-15-2021(8:37)
+  Worked on story formatting
