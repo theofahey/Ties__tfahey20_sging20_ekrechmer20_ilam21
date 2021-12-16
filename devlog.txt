@@ -31,3 +31,5 @@ EllaK -- 12-15-2021(8:37)
   Worked on story formatting
 SeanG -- 12-16-2021(8:39)
   Worked on database.py, specifically making a table for words inserted and a table for a list of word types (ie: adj, verb). 
+TheoF -- 12-16-2021(8:40)
+  Implimented Dog API
