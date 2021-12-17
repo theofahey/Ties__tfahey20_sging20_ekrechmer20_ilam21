@@ -36,3 +36,5 @@ EllaK -- 12-16-2021(8:39)
   Found, modified, and added an image for the first story
 TheoF -- 12-16-2021(8:40)
   Implemented Dog API
+TheoF -- 12-17-2021(8:31)
+  Added Pics with Dog API
