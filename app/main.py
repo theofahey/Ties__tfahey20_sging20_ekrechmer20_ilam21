@@ -35,26 +35,40 @@ def kanye_east():
     title2 = data['items'][num2]['title']
     hist2 = data['items'][num]['details']
     return render_template("fbi.html", kanye = x["quote"], name = title1, crim = hist1,name2 = title2, crim2 = hist2)
-@app.route("/Dog", methods = ['GET', 'POST'])
 def dogstory():
     url = "https://dog.ceo/api/breeds/list/all"
     w = urllib.request.Request(url,headers={'User-Agent': 'Mozilla/5.0'})
     r = urllib.request.urlopen(w).read()
     x = json.loads(r)
     breedlist = x['message']
-    res = key, val = random.choice(list(breedlist.items()))
-    subreed1 = ""
-    if len(res[1]):
-        num = len(res[1]);
-        subreed1 = res[1][random.randrange(0,num)]
+    totalbreed = [""]*4
+    breedpics = [""]*4
+    for x in range(4):
+        res = key, val = random.choice(list(breedlist.items()))
+        subreed1 = ""
+        if len(res[1]):
+            num = len(res[1]);
+            subreed1 = res[1][random.randrange(0,num)]
 
 
-    familybreed1 = res[0]
+        familybreed1 = res[0]
 
-    totalbreed1 = subreed1 + " " + familybreed1
+        totalbreed[x] = subreed1 + " " + familybreed1
 
+        breedpics[x] = getpics(subreed1, familybreed1)
 
-    return render_template("dog.html", breed1 = totalbreed1 )
+    return render_template("dog.html", breed1 = totalbreed[0], breed2 = totalbreed[1], breed3 = totalbreed[2], breed4 = totalbreed[3],pic1 = breedpics[0] )
+def getpics(subreed, familybreed):
+    if (subreed != ""):
+        picurl = "https://dog.ceo/api/breed/" + familybreed + "/"+ subreed +  "/images"
+    else:
+        picurl = picurl = "https://dog.ceo/api/breed/" + familybreed + "/images"
+    requesting = urllib.request.Request(picurl,headers={'User-Agent': 'Mozilla/5.0'})
+    reading = urllib.request.urlopen(requesting).read()
+    x = json.loads(reading)
+    flist = x['message']
+    finalurl = random.choice(flist);
+    return finalurl
 
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
