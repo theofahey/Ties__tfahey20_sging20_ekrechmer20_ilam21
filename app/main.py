@@ -11,6 +11,9 @@ app = Flask(__name__)
 def start():
     return render_template("index.html");
 
+@app.route("/FBI-input", methods = ['GET', 'POST'])
+def kanye_east_fillin():
+    return render_template("madlibtemplate.html")
 @app.route("/FBI", methods = ['GET', 'POST'])
 def kanye_east():
     url = "https://api.kanye.rest"
