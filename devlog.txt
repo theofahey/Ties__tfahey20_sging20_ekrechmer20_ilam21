@@ -46,3 +46,4 @@ EllaK -- 12-17-2021(8:39)
   Added more images for the dog story
 EllaK -- 12-20-2021(8:39)
   Made all images same width
+  Added reading in story from text file for FBI story
