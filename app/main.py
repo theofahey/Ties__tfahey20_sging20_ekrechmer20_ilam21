@@ -5,17 +5,32 @@ import urllib.request
 from urllib.request import urlopen
 import json
 import random
+import os
 app = Flask(__name__)
 
+def replace(story, words):
+    output = ""
+    for x in story:
+        if x == "#":
+            output += words.pop()
+        else:
+            output += x
+    return output
 @app.route("/", methods=['GET', 'POST'])
 def start():
     return render_template("index.html");
 
 @app.route("/FBI-input", methods = ['GET', 'POST'])
 def kanye_east_fillin():
-    return render_template("madlibtemplate.html")
+    return render_template("fbiInput.html")
+
+
 @app.route("/FBI", methods = ['GET', 'POST'])
 def kanye_east():
+    document_path = os.getcwd()+'/app/fbiStory.txt'
+    with open(document_path, 'r') as f:
+        lines = f.read()
+        f.close()
     url = "https://api.kanye.rest"
     #Opens From Browser in order to ensure not being blocked.
     w = urllib.request.Request(url,headers={'User-Agent': 'Mozilla/5.0'})
@@ -34,7 +49,8 @@ def kanye_east():
     hist1 = data['items'][num]['details']
     title2 = data['items'][num2]['title']
     hist2 = data['items'][num]['details']
-    return render_template("fbi.html", kanye = x["quote"], name = title1, crim = hist1,name2 = title2, crim2 = hist2)
+    return render_template("fbi.html", kanye = x["quote"], name = title1, crim = hist1,name2 = title2, crim2 = hist2, lines = lines)
+
 def dogstory():
     url = "https://dog.ceo/api/breeds/list/all"
     w = urllib.request.Request(url,headers={'User-Agent': 'Mozilla/5.0'})
