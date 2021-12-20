@@ -40,3 +40,9 @@ TheoF -- 12-17-2021(8:31)
   Added Pics with Dog API
 SeanG -- 12-17-2021(8:37)
   Added more functionality to WordsTable and TypeTable class 
+EllaK -- 12-17-2021(8:39)
+  Fixed merge error (added back form)
+  Formatted dog story
+  Added more images for the dog story
+EllaK -- 12-20-2021(8:39)
+  Made all images same width
