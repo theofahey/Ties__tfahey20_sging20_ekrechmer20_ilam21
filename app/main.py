@@ -22,12 +22,12 @@ def start():
 
 @app.route("/FBI-input", methods = ['GET', 'POST'])
 def kanye_east_fillin():
-    return render_template("fbiInput.html")
+    return render_template("FBIfill.html")
 
 
 @app.route("/FBI", methods = ['GET', 'POST'])
 def kanye_east():
-    document_path = os.getcwd()+'/app/fbiStory.txt'
+    document_path = os.getcwd()+'/fbiStory.txt'
     with open(document_path, 'r') as f:
         lines = f.read()
         f.close()
