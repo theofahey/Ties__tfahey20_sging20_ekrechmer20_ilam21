@@ -91,7 +91,20 @@ def getpics(subreed, familybreed):
     flist = x['message']
     finalurl = random.choice(flist);
     return finalurl
+@app.route("/funny", methods = ['GET', 'POST'])
+def funny():
+    list = [""] * 3
+    for i in range(3):
+        url = "https://v2.jokeapi.dev/joke/Programming,Spooky,Christmas?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
+        w = urllib.request.Request(url,headers={'User-Agent': 'Mozilla/5.0'})
+        r = urllib.request.urlopen(w).read()
+        x = json.loads(r)
+        if "joke" in x:
+            list[i] = x['joke']
+        else:
+            list[i] = x['setup'] + " ... " + x['delivery']
 
+    return render_template("funny.html", joke1 = list[0], joke2 = list[1], joke3 = list[2], )
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
     app.debug = True
