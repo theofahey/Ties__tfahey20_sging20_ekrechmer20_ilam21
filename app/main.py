@@ -54,6 +54,7 @@ def kanye_east():
     num2 = random.randrange(0,20)
     while(num2 == num):
         num2 = random.randrange(0,20)
+    # not sure if api is configured correctly
     title1 = data['items'][num]['title']
     hist1 = data['items'][num]['details']
     title2 = data['items'][num2]['title']
