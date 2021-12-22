@@ -6,16 +6,21 @@ from urllib.request import urlopen
 import json
 import random
 import os
+from jinja2 import Template
+
 app = Flask(__name__)
 
 def replace(story, words):
     output = ""
     for x in story:
         if x == "#":
-            output += words.pop()
+            output += words.pop(0)
         else:
             output += x
+
     return output
+
+
 @app.route("/", methods=['GET', 'POST'])
 def start():
     return render_template("index.html");
@@ -27,7 +32,11 @@ def kanye_east_fillin():
 
 @app.route("/FBI", methods = ['GET', 'POST'])
 def kanye_east():
-    document_path = os.getcwd()+'/fbiStory.txt'
+    document_path = os.getcwd()
+    if "app" in document_path:
+        document_path +='/fbiStory.txt'
+    else:
+        document_path +='/app/fbiStory.txt'
     with open(document_path, 'r') as f:
         lines = f.read()
         f.close()
@@ -49,7 +58,18 @@ def kanye_east():
     hist1 = data['items'][num]['details']
     title2 = data['items'][num2]['title']
     hist2 = data['items'][num]['details']
-    return render_template("fbi.html", kanye = x["quote"], name = title1, crim = hist1,name2 = title2, crim2 = hist2, lines = lines)
+    words = []
+    if request.method == "POST":
+        for b in range(1,13):
+            words.append(request.form[str(b)])
+    words.insert(0, "title1+hist1")
+    words.insert(2, "kanye quote")
+    words.insert(7, words[3])
+    words.insert(13, "title2+hist2")
+    print(words)
+    lines = replace(lines, words)
+
+    return render_template("fbi.html", kanye = x["quote"], name = title1, crim = hist1,name2 = title2, crim2 = hist2, lines = lines, place = "ppppp")
 
 
 @app.route("/Dog-input", methods=['GET', 'POST'])
