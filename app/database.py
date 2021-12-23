@@ -53,10 +53,10 @@ class madlibTable:
         data= self._cursor.fetchone()
         return data
     def searchByKeyword(self, topic, limit : int):
-        self._cursor.execute(f"SELECT rowid, * from {self._name} WHERE topic LIKE /"{topic}\" LIMIT {limit};")
+        self._cursor.execute(f"SELECT rowid, * FROM {self._name} WHERE topic LIKE \"{topic}\" LIMIT {limit};")
         data = self._cursor.fetchone()
         return data
-        
+
 
 
 
