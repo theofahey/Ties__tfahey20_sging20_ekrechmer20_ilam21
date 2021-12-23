@@ -46,6 +46,22 @@ def signup():
     else:
         return render_template('signup.html', syntaxerror = "This username already exists")
 
+@app.route("/signup")
+def signup():
+    username= request.args['username']
+    password= request.args['password']
+    passauth= request.args['passauth']
+    if (username=="" or password==""):
+        return render_template('signup.html', syntaxerror="Cannot submit blank username or password")
+    elif not userpass.userExists(username):
+        userpass.insert(username, password) # committing actions to database must be done every time you commit a command
+        session["username"]=username
+        return redirect("/loggedin")
+    elif (password!=passauth):
+        return render_template('signup.html', passerror="Passwords must match")
+    else:
+        return render_template('signup.html', syntaxerror = "This username already exists")
+
 
 @app.route("/FBI", methods = ['GET', 'POST'])
 def kanye_east():
