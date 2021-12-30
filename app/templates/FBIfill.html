@@ -10,51 +10,68 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" style="padding-left: 10px;"
+      <a class="navbar-brand" style="padding-left: 10px; font-family: Helvetica;"
         href="{{ url_for('start') }}">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
+    <br>
     {% block content %}
     <form class="" action="{{ url_for('kanye_east') }}" method="POST">
-          Verb:
-          <input type="text" name="1">
-          <br>
-          Noun:
-          <input type="text" name="2">
-          <br>
-          Verb:
-          <input type="text" name="3">
-          <br>
-          Noun:
-          <input type="text" name="4">
-          <br>
-          Verb:
-          <input type="text" name="5">
-          <br>
-          Noun:
-          <input type="text" name="6">
-          <br>
-          Verb:
-          <input type="text" name="7">
-          <br>
-          Noun:
-          <input type="text" name="8">
-          <br>
-          Verb:
-          <input type="text" name="9">
-          <br>
-          Noun:
-          <input type="text" name="10">
-          <br>
-          Verb:
-          <input type="text" name="11">
-          <br>
-          Noun:
-          <input type="text" name="12">
-          <br>
+          <div class="container">
+          <div class="row">
+            <!-- column 1 -->
+            <div class="col-sm" style="padding-left: 0px">
+              Name:
+              <input type="text" name="1" size="15">
+              <br><br>
+              Place:
+              <input type="text" name="2" size="15">
+              <br><br>
+              Verb:
+              <input type="text" name="3" size="15">
+              <br><br>
+            </div>
+            <!-- column 2 -->
+            <div class="col-sm" style="padding-left: 0px">
+              Verb:
+              <input type="text" name="4" size="15">
+              <br><br>
+              Adjective:
+              <input type="text" name="5" size="15">
+              <br><br>
+              Noun:
+              <input type="text" name="6" size="15">
+              <br><br>
+            </div>
+            <!-- column 3 -->
+            <div class="col-sm" style="padding-left: 0px">
+              Verb (-ing):
+              <input type="text" name="7" size="15">
+              <br><br>
+              Verb:
+              <input type="text" name="8" size="15">
+              <br><br>
+              Adjective:
+              <input type="text" name="9" size="15">
+            </div>
+            <!-- column 4 -->
+            <div class="col-sm" style="padding-left: 0px">
+              Adjective:
+              <input type="text" name="10" size="15">
+              <br><br>
+              Adjective:
+              <input type="text" name="11" size="15">
+              <br><br>
+              Verb:
+              <input type="text" name="12" size="15">
+            </div>
+          </div>
           <input type="submit">
+        </div>
+
+
     </form>
     {% endblock %}
   </body>

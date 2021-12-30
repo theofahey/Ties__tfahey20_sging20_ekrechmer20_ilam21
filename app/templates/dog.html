@@ -7,8 +7,13 @@
 <title> FBI </title>
 </head>
 <style>
-  body{
-    padding: 10px;
+  h1{
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  p{
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .center{
     display: block;
@@ -20,12 +25,21 @@
     height: auto;
   }
 </style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" style="padding-left: 10px; font-family: Helvetica;"
+    href="{{ url_for('start') }}">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
 <body>
   <h1 class="display-4">Today Has Been Ruff</h1>
   <p class="lead">
     Stupid dog! Your {{breed1}} is dragging you down the road, your heels scraping the concrete, trying not to fall. Moments later, you fall anyway, into an adjective puddle, getting noun all over you. Just then, seeing your dog, a bunch of other dogs decide they want a new best friend, so a {{breed2}}, {{breed3}}, and {{breed4}} trample over you, leaving you to verb on the ground, covered in adjective dog prints and puddle stuff. You adverb stand up, verb ending in -ing towards your dog, but then you forget which one is yours, so you grab the first one you see. Your neighbor comes up to you and asks, “Why are you holding that adjective noun?” You reply, “I don’t know, I think it’s cute,” and verb away, not in any mood to take her judgy looks. Your neighbor stands there, looking like a(n) noun and adverb verb ending in -ing.
   </p>
-  <img src={{pic1}} alt = pic1 width=>
+  <img src={{pic1}} alt = pic1>
   <img src={{pic2}} alt = pic2>
   <img src={{pic3}} alt = pic3>
   <img src={{pic4}} alt = pic4>
