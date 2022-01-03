@@ -7,6 +7,8 @@ import json
 import random
 import os
 from jinja2 import Template
+from database import Usernamepassword, madlibTable
+
 
 app = Flask(__name__)
 
@@ -28,28 +30,6 @@ def start():
 @app.route("/FBI-input", methods = ['GET', 'POST'])
 def kanye_east_fillin():
     return render_template("FBIfill.html")
-@app.route("/login")
-def login():
-    username= request.args['username']
-    password= request.args['password']
-
-    if (username=="" or password==""):
-        return render_template('login.html', syntaxerror="Cannot submit blank username or password")
-    elif not userpass.userExists(username):
-        return render_template('login.html', syntaxerror="Username does not exist")
-    elif not userpass.passMatch(username, password):
-        return render_template('login.html', syntaxerror = "Incorrect password")
-    else:
-        session["username"] = username
-        return redirect('/loggedin')
-
-@app.route("/signupdisplay")
-def disp_signuppage():
-    if (session.get("username") is not None):
-        # if there's an existing session, shows welcome page
-        return redirect ("/")
-    if ("username" != None):
-        return render_template( 'signup.html' )
 
 @app.route("/signup")
 def signup():
@@ -66,10 +46,6 @@ def signup():
         return render_template('signup.html', passerror="Passwords must match")
     else:
         return render_template('signup.html', syntaxerror = "This username already exists")
-
-@app.route("/loggedin")
-def loggedin(): # does not show info in URL, shows /loggedin instead
-    return redirect("/")
 
 
 @app.route("/FBI", methods = ['GET', 'POST'])
@@ -100,19 +76,19 @@ def kanye_east():
     title1 = data['items'][num]['title']
     hist1 = data['items'][num]['details']
     title2 = data['items'][num2]['title']
-    hist2 = data['items'][num]['details']
+    hist2 = data['items'][num2]['details']
     words = []
     if request.method == "POST":
         for b in range(1,13):
             words.append(request.form[str(b)])
-    words.insert(0, "title1+hist1")
-    words.insert(2, "kanye quote")
-    words.insert(7, words[3])
-    words.insert(13, "title2+hist2")
-    print(words)
+    words.insert(0, title1)
+    words.insert(2, x["quote"])
+    #words.insert(7, words[3])
+    words.insert(12, title2)
+    print(hist2)
     lines = replace(lines, words)
 
-    return render_template("fbi.html", kanye = x["quote"], name = title1, crim = hist1,name2 = title2, crim2 = hist2, lines = lines, place = "ppppp")
+    return render_template("fbi.html",  lines = lines)
 
 
 @app.route("/Dog-input", methods=['GET', 'POST'])
