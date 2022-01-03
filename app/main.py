@@ -105,14 +105,13 @@ def kanye_east():
     if request.method == "POST":
         for b in range(1,13):
             words.append(request.form[str(b)])
-    words.insert(0, "title1+hist1")
-    words.insert(2, "kanye quote")
-    words.insert(7, words[3])
-    words.insert(13, "title2+hist2")
-    print(words)
+    words.insert(0, "dog1")
+    words.insert(3, "dog2")
+    words.insert(4, "dog3")
+    words.insert(5, "dog4")
     lines = replace(lines, words)
 
-    return render_template("fbi.html", kanye = x["quote"], name = title1, crim = hist1,name2 = title2, crim2 = hist2, lines = lines, place = "ppppp")
+    return render_template("fbi.html", lines = lines)
 
 
 @app.route("/Dog-input", methods=['GET', 'POST'])
@@ -121,6 +120,14 @@ def dogstory_fillin():
 
 @app.route("/Dog", methods = ['GET', 'POST'])
 def dogstory():
+    document_path = os.getcwd()
+    if "app" in document_path:
+        document_path +='/dogStory.txt'
+    else:
+        document_path +='/app/dogStory.txt'
+    with open(document_path, 'r') as f:
+        lines = f.read()
+        f.close()
     url = "https://dog.ceo/api/breeds/list/all"
     w = urllib.request.Request(url,headers={'User-Agent': 'Mozilla/5.0'})
     r = urllib.request.urlopen(w).read()
@@ -142,7 +149,15 @@ def dogstory():
 
         breedpics[x] = getpics(subreed1, familybreed1)
 
+    words = []
+
+    if request.method == "POST":
+        for b in range(1,13):
+            words.append(request.form[str(b)])
+
     return render_template("dog.html", breed1 = totalbreed[0], breed2 = totalbreed[1], breed3 = totalbreed[2], breed4 = totalbreed[3],pic1 = breedpics[0], pic2=breedpics[1], pic3=breedpics[2], pic4=breedpics[3] )
+
+
 def getpics(subreed, familybreed):
     if (subreed != ""):
         picurl = "https://dog.ceo/api/breed/" + familybreed + "/"+ subreed +  "/images"
