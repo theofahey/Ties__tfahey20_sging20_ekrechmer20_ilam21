@@ -153,7 +153,12 @@ def getpics(subreed, familybreed):
     flist = x['message']
     finalurl = random.choice(flist);
     return finalurl
-@app.route("/funny", methods = ['GET', 'POST'])
+
+
+@app.route("/Funny-input", methods=['GET', 'POST'])
+def funny_fillin():
+    return render_template("funnyfill.html");
+@app.route("/Funny", methods = ['GET', 'POST'])
 def funny():
     list = [""] * 3
     for i in range(3):
