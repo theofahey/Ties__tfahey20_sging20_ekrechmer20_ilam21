@@ -5,7 +5,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>FBI Madlib</title>
+    <title>{% block title %}{% endblock %}</title>
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,54 +18,68 @@
     </nav>
     <br>
     {% block content %}
-    <form class="" action="/Dog" method="post">
-        <div class="container">
+    <form class="" action="/Funny" method="POST">
+          <div class="container">
           <div class="row">
             <!-- column 1 -->
             <div class="col-sm" style="padding-left: 0px">
               Adjective:
               <input type="text" name="1" size="15">
               <br><br>
-              Noun:
+              Adjective:
               <input type="text" name="2" size="15">
               <br><br>
-              Verb:
+              Adjective:
               <input type="text" name="3" size="15">
+              <br><br>
+              Noun:
+              <input type="text" name="4" size="15">
               <br><br>
             </div>
             <!-- column 2 -->
             <div class="col-sm" style="padding-left: 0px">
-              Adjective:
-              <input type="text" name="4" size="15">
-              <br><br>
-              Adverb:
+              Verb:
               <input type="text" name="5" size="15">
               <br><br>
-              Verb (-ing):
+              Adjective:
               <input type="text" name="6" size="15">
+              <br><br>
+              Adjective:
+              <input type="text" name="7" size="15">
+              <br><br>
+              Food:
+              <input type="text" name="8" size="15">
               <br><br>
             </div>
             <!-- column 3 -->
             <div class="col-sm" style="padding-left: 0px">
-              Adjective:
-              <input type="text" name="7" size="15">
+              Drink:
+              <input type="text" name="9" size="15">
               <br><br>
-              Noun:
-              <input type="text" name="8" size="15">
+              Verb (-ing):
+              <input type="text" name="10" size="15">
+              <br><br>
+              Adjective:
+              <input type="text" name="11" size="15">
               <br><br>
               Verb:
-              <input type="text" name="9" size="15">
+              <input type="text" name="12" size="15">
+              <br><br>
             </div>
             <!-- column 4 -->
             <div class="col-sm" style="padding-left: 0px">
-              Noun:
-              <input type="text" name="10" size="15">
+              Verb:
+              <input type="text" name="13" size="15">
               <br><br>
-              Adverb:
-              <input type="text" name="11" size="15">
+              Yes/No:
+              <input type="text" name="14" size="15">
               <br><br>
-              Verb (-ing):
-              <input type="text" name="12" size="15">
+              Adjective:
+              <input type="text" name="15" size="15">
+              <br><br>
+              Verb:
+              <input type="text" name="16" size="15">
+              <br><br>
             </div>
           </div>
           <input type="submit">
