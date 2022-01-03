@@ -139,7 +139,7 @@ def dogstory():
     words.insert(5, "dog4")
     lines = replace(lines, words)
 
-    return render_template("dog.html", lines = lines)
+    return render_template("dog.html", lines = lines, pic1 = breedpics[0], pic2=breedpics[1], pic3=breedpics[2], pic4=breedpics[3])
 
 
 def getpics(subreed, familybreed):
