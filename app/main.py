@@ -35,7 +35,7 @@ def replace(story, words):
 
     return output
 
-
+ 
 @app.route("/", methods=['GET', 'POST'])
 def start():
     return render_template("index.html",
@@ -79,7 +79,7 @@ def login():
         return redirect('/loggedin')
 
 @app.route("/signupdisplay")
-def disp_signuppage():
+def _dispsignuppage():
     if (session.get("username") is not None):
         # if there's an existing session, shows welcome page
         return redirect ("/")
@@ -152,8 +152,31 @@ def kanye_east():
     print(hist2)
     lines = replace(lines, words)
 
-    return render_template("fbi.html",  lines = lines)
+    return render_template("fbi.html",  lines = lines, isFilled=True)
 
+
+@app.route("/viewPosts")
+def viewPosts():
+    if session.get("username") is None:
+        return redirect("/")
+
+    return render_template(
+        "viewposts.html",
+        username=session.get("username"),
+        posts= [[x[0],x[1],x[2].replace("\"",""), x[3].replace("\"","")] for x in madlibTable.fetchAllByUsername(session.get("username"))]
+        )
+
+@app.route("/save", methods=["GET", "POST"])
+def save():
+    if request.method == "GET" or session.get("username") is None:
+        return redirect("/")
+
+    madlibTable.makeEntry(
+        session.get("username"),
+        request.form.get("prompt"),
+        request.form.get("content"))
+
+    return render_template("savedPost.html")
 
 
 @app.route("/Dog-input", methods=['GET', 'POST'])
@@ -203,7 +226,7 @@ def dogstory():
     words.insert(5, "dog4")
     lines = replace(lines, words)
 
-    return render_template("dog.html", lines = lines, pic1 = breedpics[0], pic2=breedpics[1], pic3=breedpics[2], pic4=breedpics[3])
+    return render_template("dog.html", lines = lines, pic1 = breedpics[0], pic2=breedpics[1], pic3=breedpics[2], pic4=breedpics[3],isFilled=True)
 
 
 def getpics(subreed, familybreed):
@@ -238,7 +261,7 @@ def funny():
         else:
             list[i] = x['setup'] + " ... " + x['delivery']
 
-    return render_template("funny.html", joke1 = list[0], joke2 = list[1], joke3 = list[2], )
+    return render_template("funny.html", joke1 = list[0], joke2 = list[1], joke3 = list[2], isFilled=True)
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
     app.debug = True

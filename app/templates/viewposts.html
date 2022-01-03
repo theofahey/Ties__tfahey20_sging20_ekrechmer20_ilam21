@@ -1,41 +1,30 @@
 <!DOCTYPE html>
-<!--
-     ETSSetera: Shyne Choi, Ella Krechmer, Tina Nguyen, Sean+Patrick Ging
-     SoftDev
-     P00
- -->
+<html>
+<head>
 
- <html>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <head>
-     <meta charset="UTF-8">
-     <title>ETSSetera</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJ">
+  <title>{{username}}'s Posts</title>
+</head>
+<body>
 
 
-   </head>
+  <h2>{{username}}'s Posts</h2>
 
-   <h3>
-     ETSSetera: Shyne Choi, Ella Krechmer, Tina Nguyen, Sean+Patrick Ging
-   </h3>
+  {% for rowid, username,title, content in posts %}
+    <div class="card">
+        <h2 class="card-title">{{title}}</h2>
+        <h3 class="card-text">A post by {{username}}</h3>
+        <p class="card-text">{{content}}}</p>
+    </div>
+  {% endfor %}
 
-   <!-- you will see the most recent post first, which would be your post -->
 
-    <body>
-        <h2> {{ title }} </h2>
-    </body>
+  <a class="btn btn-primary" href="/">Go Home</a>
 
-    <body>
-         {{ post }}
-    </body>
-    <br><br>
-    <body>
-    <i> Topic: {{ topic }}</i>
-    </body>
-   <br><br>
-   {% if canEdit%}
-   <a href="/edit/{{id}}">Edit this post</a>
-    <br><br>
-    {% endif %}
-   <a href="{{ url_for('create') }}">Create a new post</a>
-   <br><br>
-   <a href="{{ url_for('loggedin') }}">Go back to homepage</a>
+</body>
+</html>

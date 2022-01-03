@@ -43,5 +43,15 @@
   <img src={{pic2}} alt = pic2>
   <img src={{pic3}} alt = pic3>
   <img src={{pic4}} alt = pic4>
+
+    {% if isFilled %}
+
+      <form action="/save" method="POST">
+           <input type="hidden" id="prompt" name="prompt" value="Today Has Been Ruff">    
+          <input type="hidden" id="content" name="content" value="{{lines}}"> 
+          <input type="submit" value="Save post">
+      </form>
+
+  {% endif %}
 </body>
 </html>

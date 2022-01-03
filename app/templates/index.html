@@ -78,7 +78,30 @@
         </div>
     </div>
   </div>
+
+  {% if not isLoggedIn %}
+  <form action="/login">
+      <h4>Username: </h4>
+      <input type="text" name="username">
+      <br>
+      <h4>Password: </h4>
+      <input type="password" name="password">
+      <br>
+      <br>
+      <input type="submit" name="sub1" value="Log In">
+      <br>
+      <br>
+      <a href="{{ url_for('_dispsignuppage') }}">Don't Have an Account? Sign Up</a>
+    </form>
   </div>
+
+  {% else %}
+
+  <a href="/viewPosts" type="button" class="btn btn-info">View your madlibs!</a>
+
+    </div>
+
+  {% endif %}
 
 <!-- Random -->
 <!-- <br>

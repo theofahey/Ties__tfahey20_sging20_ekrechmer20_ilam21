@@ -34,11 +34,11 @@ class MadlibTable:
         self._db = sqlite3.connect(fileName, check_same_thread=False)
         self._cursor = self._db.cursor()
         self._name = name
-        self._cursor.execute(f"CREATE TABLE IF NOT EXISTS {self._name}(username TEXT, madlib TEXT, topic TEXT, unique(topic, madlib));")
+        self._cursor.execute(f"CREATE TABLE IF NOT EXISTS {self._name} (username TEXT, madlib TEXT, topic TEXT);")
 
     def makeEntry(self, username, madlib, topic):
-        self_cursor.execute(f"INSERT INTO {self._name}({username}, {madlib}, {topic});")
-        self_cursor.commit()
+        self._cursor.execute(f"INSERT INTO {self._name} VALUES(\"{username}\", \"{madlib}\", \"{topic}\");")
+        self._db.commit()
 
     def idExists(self, id: int):
         self._cursor.execute(f"SELECT * FROM {self._name} WHERE rowid=\"{id}\";")

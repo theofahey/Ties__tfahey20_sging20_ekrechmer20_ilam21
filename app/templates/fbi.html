@@ -36,5 +36,16 @@
   {{lines}}
   </p>
   <img src="static/stealingyoheart.jpg" width=50% class="center">
+
+
+  {% if isFilled %}
+
+      <form action="/save" method="POST">
+           <input type="hidden" id="prompt" name="prompt" value="On the run">    
+          <input type="hidden" id="content" name="content" value="{{lines}}"> 
+          <input type="submit" value="Save post">
+      </form>
+
+  {% endif %}
 </body>
 </html>
