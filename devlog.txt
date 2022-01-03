@@ -55,3 +55,6 @@ EllaK -- 12-29-2021(23:00)
   Added navbars to all pages
   Reformatted home page (fonts, images, spacing)
   Fixed small details for the FBI fill-in (specifying parts of speech, changed small part of story)
+EllaK -- 01-03-2022(8:40)
+  Added all fill-ins for dog story
+  Did all front-end for comedy club story
