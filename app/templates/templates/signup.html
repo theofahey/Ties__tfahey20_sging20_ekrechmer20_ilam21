@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+    ETSSetera: Shyne Choi, Ella Krechmer, Tina Nguyen, Sean+Patrick Ging
+    SoftDev
+    P00
+ -->
+
+
+<html>
+
+  <head>
+    <title> LOGIN PAGE </title>
+  </head>
+
+  <body>
+    <h1>
+      Welcome to ETSSetera blogs!
+    </h1>
+
+    <h3>
+      ETSSetera: Shyne Choi, Ella Krechmer, Tina Nguyen, Sean+Patrick Ging
+    </h3>
+    Enter a username and password.
+    <p style="color:red">{{syntaxerror}}</p>
+    <form action="/signup">
+      <h4>Username: </h4>
+      <input type="text" name="username">
+      <br>
+      <h4>Password: </h4>
+      <input type="password" name="password">
+      <h4>Confirm Password: </h4>
+      <input type="password" name="passauth">
+      <p style="color: red">{{passerror}}</p>
+      <br>
+      <input type="submit" name="sub1" value="Sign Up">
+      <br>
+      <br>
+      <a href="{{ url_for('disp_loginpage') }}">Already Have an Account? Log in</a>
+    </form>
+    <br>
+  </body>
+
+</html>
