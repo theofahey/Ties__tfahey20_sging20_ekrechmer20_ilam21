@@ -7,12 +7,25 @@ import json
 import random
 import os
 from jinja2 import Template
-from database import Usernamepassword, madlibTable
+from database import Usernamepassword, MadlibTable
 
 
 app = Flask(__name__)
+app.secret_key = os.urandom(32)
+
+#initializing db
+db_file = "database.db"
+userpass = Usernamepassword(db_file, "password")
+madlibTable = MadlibTable(db_file, "madlib")
+
+####################################
+
 
 def replace(story, words):
+    '''
+    What input and output? -- Sean
+    I need to know the types as well I'm confused
+    '''
     output = ""
     for x in story:
         if x == "#":
@@ -25,7 +38,8 @@ def replace(story, words):
 
 @app.route("/", methods=['GET', 'POST'])
 def start():
-    return render_template("index.html");
+    return render_template("index.html",
+                            isLoggedIn = session.get("username") is not None);
 
 @app.route("/FBI-input", methods = ['GET', 'POST'])
 def kanye_east_fillin():
@@ -47,6 +61,56 @@ def signup():
     else:
         return render_template('signup.html', syntaxerror = "This username already exists")
 
+
+
+@app.route("/login")
+def login():
+    username= request.args['username']
+    password= request.args['password']
+
+    if (username=="" or password==""):
+        return render_template('login.html', syntaxerror="Cannot submit blank username or password")
+    elif not userpass.userExists(username):
+        return render_template('login.html', syntaxerror="Username does not exist")
+    elif not userpass.passMatch(username, password):
+        return render_template('login.html', syntaxerror = "Incorrect password")
+    else:
+        session["username"] = username
+        return redirect('/loggedin')
+
+@app.route("/signupdisplay")
+def disp_signuppage():
+    if (session.get("username") is not None):
+        # if there's an existing session, shows welcome page
+        return redirect ("/")
+    if ("username" != None):
+        return render_template( 'signup.html' )
+
+
+
+@app.route("/loggedin")
+def loggedin(): # does not show info in URL, shows /loggedin instead
+    return redirect("/")
+
+
+@app.route("/create", methods=["GET", "POST"])
+def create():
+    if session.get("username") is None:
+        return redirect("/")
+
+    if request.method == "GET":
+        return render_template('create.html')
+    else:
+        topic = request.form['topic']
+        username = session.get("username")
+        title = request.form['title']
+        post = request.form['postcontent']
+
+        if topic=="empty" or title=="" or post=="":
+            return render_template('create.html', error="Must have a topic, title, and content")
+        else:
+            blog.insert(username, title, post, topic)
+            return view(topic, title, post, blog.getNewestId())
 
 @app.route("/FBI", methods = ['GET', 'POST'])
 def kanye_east():
@@ -153,6 +217,9 @@ def getpics(subreed, familybreed):
     flist = x['message']
     finalurl = random.choice(flist);
     return finalurl
+
+
+
 
 
 @app.route("/Funny-input", methods=['GET', 'POST'])
