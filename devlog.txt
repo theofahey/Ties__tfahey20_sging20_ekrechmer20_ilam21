@@ -50,6 +50,8 @@ EllaK -- 12-20-2021(8:39)
 TheoF -- 12-20-2021(11:12)
   Implemented Joke API which generates a random joke.
   Added Joke API to funny.html
+SeanG -- 12-20-2021(08:40)
+  Working on database. Have to change it as the paradigm of our project changes. Don't need database for saving the inputted words. Instead will use the database to save madlibs and save usernames and passwords.
 EllaK -- 12-29-2021(23:00)
   Reformatted FBI fill-in page
   Added navbars to all pages
@@ -58,3 +60,6 @@ EllaK -- 12-29-2021(23:00)
 EllaK -- 01-03-2022(8:40)
   Added all fill-ins for dog story
   Did all front-end for comedy club story
+SeanG -- 01-03-2022(15:29)
+  Added full functionality to the database and implemented in all three scenarios. The person working on the      madlibs prompts (Ivan) needs to fix it to pass it in as lines. Added signup, login, session, tables, view saved madlibs, save madlibs, and some robustness to prevent errors. 
+  
