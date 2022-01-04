@@ -8,6 +8,10 @@
     <title>{% block title %}{% endblock %}</title>
 
   </head>
+  <style>
+    h1{
+      text-align:center; font-family: "Impact";}
+  </style>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" style="padding-left: 10px; font-family: Helvetica;"
@@ -18,6 +22,15 @@
     </nav>
     <br>
     {% block content %}
+    <div style="text-align:center">
+      <img src="static/radlibs.png" alt="logo">
+    </div>
+    <br>
+    <h1>
+      Night At the Comedy Club
+    </h1>
+
+    <br>
     <form class="" action="/Funny" method="POST">
           <div class="container">
           <div class="row">
