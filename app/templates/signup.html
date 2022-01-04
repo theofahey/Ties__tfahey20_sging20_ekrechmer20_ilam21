@@ -16,14 +16,17 @@
     height: auto;
   }
   h1{
-    font-family: "impact";
+    font-family: "Copperplate";
     text-align: center;
     font-size: 60px;
   }
   h2{
     text-align: center;
-    font-family: "Courier New";
+    font-family: "Helvetica";
     color: Grey;
+  }
+  .form-control{
+    size: "20";
   }
 
   </style>
@@ -38,30 +41,32 @@
     <h2>
       Ties: Theo Fahey, Sean Ging, Ivan Lam, Ella Krechmer
     </h2>
-    Enter a username and password.
-    <br>
-    <br>
-    <p style="color:red">{{syntaxerror}}</p>
-    <form action="/signup">
-      <div class="form-group">
-        <label for="exampleUser">Username</label>
-        <input type="text" class="form-control" id="exampleUser" aria-describedby="emailHelp" placeholder="Enter Username" name = "username">
+    <form action="/signup" style="padding: 10px;">
+
+      <h6>Enter a username and password.</h6>
+      <div class="col-sm-2">
+        <label for="exampleUser" style="padding-bottom:7px;">Username</label>
+        <input type="text" class="form-control" id="exampleUser" placeholder="Enter Username" name = "username">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
       </div>
-      <div class="form-group">
-        <label for="examplePassword">Password</label>
+      <br>
+      <div class="col-sm-2">
+        <label for="examplePassword" style="padding-bottom:7px;">Password</label>
         <input type="password" class="form-control" id="examplePassword" placeholder="Password" name = "password">
       </div>
-      <div class="form-group">
-        <label for "passauth"> Confirm Password </label>
-          <input type="password" class="form-control" id="passauth" placeholder="Password" name="passauth">
-          <p style="color: red">{{passerror}}</p>
-      <div class="form-group form-check">
+      <br>
+      <div class="col-sm-2">
+        <label for "passauth" style="padding-bottom:7px;"> Confirm Password </label>
+          <input type="password" class="form-control" id="passauth" placeholder="Confirm Password" name="passauth">
+      <!-- <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
       </div>
-      <p style="color: red">{{passerror}}</p>
+      <br>
+      <p style="color: red">{{syntaxerror}}</p>
       <button type="submit" class="btn btn-primary" name="sub1" value="Sign Up">Submit</button>
+      <br><br>
+      <a href="/">Already Have an Account? Log In</a>
     </form>
     <!-- <form action="/signup">
       <h4>Username: </h4>
@@ -75,7 +80,6 @@
       <input type="submit" name="sub1" value="Sign Up">
       <br>
       <br>
-      <a href="{{ url_for('_dispsignuppage') }}">Already Have an Account? Log in</a>
     </form> -->
     <br>
   </body>

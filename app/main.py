@@ -58,7 +58,7 @@ def signup():
     if (username=="" or password==""):
         return render_template('signup.html', syntaxerror="Cannot submit blank username or password")
     elif (password!=passauth):
-        return render_template('signup.html', passerror="Passwords must match")
+        return render_template('signup.html', syntaxerror="Passwords must match")
     elif not userpass.userExists(username):
         userpass.insert(username, password) # committing actions to database must be done every time you commit a command
         session["username"]=username
