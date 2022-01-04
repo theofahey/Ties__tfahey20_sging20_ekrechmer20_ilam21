@@ -66,5 +66,5 @@ SeanG -- 01-03-2022(11:29)
   Added html pages to work with login, signups, and redirecting properly.
 SeanG -- 01-03-2022(15:29)
   Added full functionality to the database and implemented in all three scenarios. The person working on the      madlibs prompts (Ivan) needs to fix it to pass it in as lines. Added signup, login, session, tables, view saved madlibs, save madlibs, and some robustness to prevent errors. 
-
-  
+TheoF -- 01-04-2022(8:40)
+  Created RadLibs Logo, and formatted Signup Page
