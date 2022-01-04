@@ -30,10 +30,11 @@ def replace(story, words):
     output = ""
     for x in story:
         if x == "#":
-            if words[0] != "":
+            if len(words[0]) != 0:
                 output += words.pop(0)
             else:
                 output += "____"
+                words.pop(0)
         else:
             output += x
 
@@ -153,7 +154,7 @@ def kanye_east():
     words.insert(2, x["quote"])
     #words.insert(7, words[3])
     words.insert(12, title2)
-    print(hist2)
+    # print(words)
     lines = replace(lines, words)
 
     return render_template("fbi.html",  lines = lines, isFilled=True)
@@ -286,6 +287,7 @@ def funny():
     words.insert(1, list1[0])
     words.insert(5, list1[1])
     words.insert(15, list1[2])
+    # print(list1[15])
     lines = replace(lines, words)
 
     return render_template("funny.html", lines = lines, joke1 = list1[0], joke2 = list1[1], joke3 = list1[2], isFilled=True)
