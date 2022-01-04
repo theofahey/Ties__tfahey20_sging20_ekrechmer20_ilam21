@@ -225,12 +225,12 @@ def dogstory():
         for b in range(1,13):
             words.append(request.form[str(b)])
 
-    words.insert(0, "dog1")
-    words.insert(3, "dog2")
-    words.insert(4, "dog3")
-    words.insert(5, "dog4")
+    words.insert(0, totalbreed[0])
+    words.insert(3, totalbreed[1])
+    words.insert(4, totalbreed[2])
+    words.insert(5, totalbreed[3])
     lines = replace(lines, words)
-
+    print(totalbreed)
     return render_template("dog.html", lines = lines, pic1 = breedpics[0], pic2=breedpics[1], pic3=breedpics[2], pic4=breedpics[3],isFilled=True)
 
 
