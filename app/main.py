@@ -23,13 +23,17 @@ madlibTable = MadlibTable(db_file, "madlib")
 
 def replace(story, words):
     '''
-    What input and output? -- Sean
-    I need to know the types as well I'm confused
+    Input str story with # in place of blanks and str[] words
+    Replaces # with words
+    Returns the story with replaces words
     '''
     output = ""
     for x in story:
         if x == "#":
-            output += words.pop(0)
+            if words[0] != "":
+                output += words.pop(0)
+            else:
+                output += "____"
         else:
             output += x
 
@@ -247,21 +251,44 @@ def getpics(subreed, familybreed):
 
 @app.route("/Funny-input", methods=['GET', 'POST'])
 def funny_fillin():
-    return render_template("funnyfill.html");
+    return render_template("funnyfill.html")
+
+
 @app.route("/Funny", methods = ['GET', 'POST'])
 def funny():
-    list = [""] * 3
+
+    document_path = os.getcwd()
+    if "app" in document_path:
+        document_path +='/funnyStory.txt'
+    else:
+        document_path +='/app/funnyStory.txt'
+    with open(document_path, 'r') as f:
+        lines = f.read()
+        f.close()
+
+    list1 = [""] * 3
     for i in range(3):
         url = "https://v2.jokeapi.dev/joke/Programming,Spooky,Christmas?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
         w = urllib.request.Request(url,headers={'User-Agent': 'Mozilla/5.0'})
         r = urllib.request.urlopen(w).read()
         x = json.loads(r)
         if "joke" in x:
-            list[i] = x['joke']
+            list1[i] = x['joke']
         else:
-            list[i] = x['setup'] + " ... " + x['delivery']
+            list1[i] = x['setup'] + " ... " + x['delivery']
 
-    return render_template("funny.html", joke1 = list[0], joke2 = list[1], joke3 = list[2], isFilled=True)
+    words = []
+
+    if request.method == "POST":
+        for b in range(1,17):
+            words.append(request.form[str(b)])
+
+    words.insert(1, list1[0])
+    words.insert(5, list1[1])
+    words.insert(15, list1[2])
+    lines = replace(lines, words)
+
+    return render_template("funny.html", lines = lines, joke1 = list1[0], joke2 = list1[1], joke3 = list1[2], isFilled=True)
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
     app.debug = True
