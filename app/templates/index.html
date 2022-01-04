@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>TIES Madlibz</title>
+    <title>TIES Radlibz</title>
     <!-- <div class="p-3 mb-2 bg-gradient-info text-white">.bg-gradient-info</div> -->
   </head>
 
@@ -30,7 +30,7 @@
 
   <!-- TITLE AND TEAM NAME -->
   <h1 class="display-3" style= "text-align:center; font-family: Copperplate;">
-   Welcome to MADLIBZ
+   Welcome to RADLIBZ
   </h1>
   <h3 class="display-4" style="text-align:center; font-size: 30px; font-family: Copperplate;">Team TIES</h3>
 
@@ -79,27 +79,29 @@
     </div>
   </div>
 
+  </div>
+
   {% if not isLoggedIn %}
-  <form action="/login">
-      <h4>Username: </h4>
+  <h5 style="padding-top:20px; padding-left:20px; padding-bottom:10px; font-family:Helvetica;">Want to save your stories? Log in or Create an Account</h4>
+  <form action="/login" style="padding-left:20px; font-family:Helvetica;">
+      <h6>Username: </h6>
       <input type="text" name="username">
       <br>
-      <h4>Password: </h4>
+      <br>
+      <h6>Password: </h6>
       <input type="password" name="password">
       <br>
       <br>
       <input type="submit" name="sub1" value="Log In">
       <br>
       <br>
-      <a href="{{ url_for('_dispsignuppage') }}">Don't Have an Account? Sign Up</a>
+      <a href="{{ url_for('_dispsignuppage') }}" style="font-family:Helvetica;">Don't Have an Account? Sign Up</a>
     </form>
-  </div>
 
   {% else %}
-
-  <a href="/viewPosts" type="button" class="btn btn-info">View your madlibs!</a>
-
-    </div>
+  <div style="padding: 20px;">
+    <a href="/viewPosts" type="button" class="btn btn-primary" style="padding:7px;">View your madlibs!</a>
+  </div>
 
   {% endif %}
 

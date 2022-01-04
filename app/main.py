@@ -39,7 +39,7 @@ def replace(story, words):
 
     return output
 
- 
+
 @app.route("/", methods=['GET', 'POST'])
 def start():
     return render_template("index.html",
@@ -56,12 +56,12 @@ def signup():
     passauth= request.args['passauth']
     if (username=="" or password==""):
         return render_template('signup.html', syntaxerror="Cannot submit blank username or password")
+    elif (password!=passauth):
+        return render_template('signup.html', passerror="Passwords must match")
     elif not userpass.userExists(username):
         userpass.insert(username, password) # committing actions to database must be done every time you commit a command
         session["username"]=username
         return redirect("/loggedin")
-    elif (password!=passauth):
-        return render_template('signup.html', passerror="Passwords must match")
     else:
         return render_template('signup.html', syntaxerror = "This username already exists")
 

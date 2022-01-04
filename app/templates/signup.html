@@ -7,30 +7,27 @@
     <title> LOGIN PAGE </title>
   </head>
 
-  <body>
-    <h1>
-      Welcome to ETSSetera blogs!
+  <body style="font-family: Helvetica;">
+    <h1 style="font-family: Copperplate; font-size: 45px; font-weight: normal;">
+      Welcome to RADLIBZ
     </h1>
-
-    <h3>
-      ETSSetera: Shyne Choi, Ella Krechmer, Tina Nguyen, Sean+Patrick Ging
-    </h3>
     Enter a username and password.
+    <br>
+    <br>
     <p style="color:red">{{syntaxerror}}</p>
     <form action="/signup">
-      <h4>Username: </h4>
+      <p>Username: </p>
       <input type="text" name="username">
       <br>
-      <h4>Password: </h4>
+      <p>Password: </p>
       <input type="password" name="password">
-      <h4>Confirm Password: </h4>
+      <p>Confirm Password: </p>
       <input type="password" name="passauth">
       <p style="color: red">{{passerror}}</p>
-      <br>
       <input type="submit" name="sub1" value="Sign Up">
       <br>
       <br>
-      <a href="{{ url_for('_dispsignuppage') }}">Already Have an Account? Log in</a>
+      <a href="/loggedin">Already Have an Account? Log in</a>
     </form>
     <br>
   </body>
