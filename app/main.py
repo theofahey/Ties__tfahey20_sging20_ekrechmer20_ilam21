@@ -97,6 +97,12 @@ def _dispsignuppage():
 def loggedin(): # does not show info in URL, shows /loggedin instead
     return redirect("/")
 
+@app.route("/logout")
+def logout():
+    #if "username" in session:
+    session["username"] = None
+    session.pop("username", None)
+    return redirect('/')
 
 @app.route("/create", methods=["GET", "POST"])
 def create():
