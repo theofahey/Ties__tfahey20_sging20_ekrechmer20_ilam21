@@ -73,6 +73,8 @@ EllaK -- 01-04-2022(8:40)
   Formatted for log in, save, and sign up
 EllaK -- 01-04-2022(9:21)
   Reformateed sign up page to match Theo's work and make it look cleaner, included errors
-EllaK -- 01-04-2022(19:35)
+EllaK -- 01-04-2022(20:00)
   Looked through all of site and fixed bugs
   Added content to fill in section
+  Edited Save button
+  Added logout
