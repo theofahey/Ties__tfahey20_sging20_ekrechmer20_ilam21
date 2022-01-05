@@ -34,6 +34,8 @@ SeanG -- 12-16-2021(8:39)
 EllaK -- 12-16-2021(8:39)
   Finished basic story formatting
   Found, modified, and added an image for the first story
+IvanL -- 12-16-2021(8:40)
+  Help design the story.
 TheoF -- 12-16-2021(8:40)
   Implemented Dog API
 TheoF -- 12-17-2021(8:31)
@@ -44,9 +46,13 @@ EllaK -- 12-17-2021(8:39)
   Fixed merge error (added back form)
   Formatted dog story
   Added more images for the dog story
+IvanL -- 12-17-2021(8:40)
+  Coded story html and help design the story format
 EllaK -- 12-20-2021(8:39)
   Made all images same width
   Added reading in story from text file for FBI story
+IvanL -- 12-20-2021(8:40)
+  Tried inputing file reading and coded input html
 TheoF -- 12-20-2021(11:12)
   Implemented Joke API which generates a random joke.
   Added Joke API to funny.html
@@ -54,6 +60,8 @@ SeanG -- 12-20-2021(08:40)
   Working on database. Have to change it as the paradigm of our project changes. Don't need database for saving the inputted words. Instead will use the database to save madlibs and save usernames and passwords.
 SeanG -- 12-23-2021(08:40)
   Still working on implementing the database.
+IvanL -- 12-23-2021(8:40)
+  Coded input for crime story, implemented file reading.
 EllaK -- 12-29-2021(23:00)
   Reformatted FBI fill-in page
   Added navbars to all pages
@@ -62,6 +70,8 @@ EllaK -- 12-29-2021(23:00)
 EllaK -- 01-03-2022(8:40)
   Added all fill-ins for dog story
   Did all front-end for comedy club story
+IvanL -- 01-03-2022(8:40)
+  Coded input for Funny story
 SeanG -- 01-03-2022(11:29)
   Added html pages to work with login, signups, and redirecting properly.
 SeanG -- 01-03-2022(15:29)
@@ -71,6 +81,8 @@ TheoF -- 01-04-2022(8:40)
 EllaK -- 01-04-2022(8:40)
   Added form error handling
   Formatted for log in, save, and sign up
+IvanL -- 01-04-2022(8:40)
+  Fixed input errors
 EllaK -- 01-04-2022(9:21)
   Reformateed sign up page to match Theo's work and make it look cleaner, included errors
 EllaK -- 01-04-2022(20:00)
