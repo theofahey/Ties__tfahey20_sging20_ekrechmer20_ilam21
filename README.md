@@ -1,9 +1,21 @@
 # RadLibs by TIES (Theodore Fahey (PM), Ella Krechmer, Sean Ging, and Ivan Lam)
 
-## App Description
-"RADLIBS", our innovative new project, strives to challenge our users minds with boggling word games. We use fun and inspiring themes and give our users the freedom to create stories of their own.
+## Roster
+* Theodore Fahey - PM, Managed group, Implemented API's. 
+* Ella Krechmer - Wrote Stories, Front End Design with CSS and Bootstrap.
+* Sean Ging- Implemented login, signup, save Radlibs and show Radlibs
+* Ivan Lam- Created and implemented the Radlibs forms. 
 
-## Installation
+## App Description
+RadLibs, our innovative new project, strives to challenge our users minds with boggling word games. We use fun and inspiring themes and give our users the freedom to create stories of their own.
+
+## API's Used
+
+* Kanye Rest- https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_kanye.rest.md
+* Dog Breeds - https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_DogBreeds.md
+* FBI - https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_FBIMostWanted.md
+* Jokes- https://github.com/stuy-softdev/notes-and-code/blob/main/api_kb/411_on_JokeAPI
+## Launch Codes
 The following instructions assume that you have [Python 3.9](https://www.python.org/downloads/ "Download Python") and [pip](https://pip.pypa.io/en/stable/installation. "Install pip") already installed.
 
 1. Clone this repository.

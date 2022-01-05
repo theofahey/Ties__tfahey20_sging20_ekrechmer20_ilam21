@@ -163,7 +163,7 @@ def kanye_east():
     # print(words)
     lines = replace(lines, words)
 
-    return render_template("fbi.html",  lines = lines, isFilled=True)
+    return render_template("fbi.html",  lines = lines, isFilled=True, isLoggedIn=session.get("username") is not None)
 
 
 @app.route("/viewPosts")
@@ -237,7 +237,7 @@ def dogstory():
     words.insert(5, totalbreed[3])
     lines = replace(lines, words)
     print(totalbreed)
-    return render_template("dog.html", lines = lines, pic1 = breedpics[0], pic2=breedpics[1], pic3=breedpics[2], pic4=breedpics[3],isFilled=True)
+    return render_template("dog.html", lines = lines, pic1 = breedpics[0], pic2=breedpics[1], pic3=breedpics[2], pic4=breedpics[3],isFilled=True, isLoggedIn=session.get("username") is not None)
 
 
 def getpics(subreed, familybreed):
@@ -296,7 +296,7 @@ def funny():
     # print(list1[15])
     lines = replace(lines, words)
 
-    return render_template("funny.html", lines = lines, joke1 = list1[0], joke2 = list1[1], joke3 = list1[2], isFilled=True)
+    return render_template("funny.html", lines = lines, joke1 = list1[0], joke2 = list1[1], joke3 = list1[2], isFilled=True, isLoggedIn=session.get("username") is not None)
 if __name__ == "__main__": #false if this file imported as module
     #enable debugging, auto-restarting of server when this file is modified
     app.debug = True
