@@ -33,15 +33,15 @@
 <body>
   <h1 class="display-4">No Laughing Matter</h1>
   <p class="lead">
-  {{ lines }} 
+  {{ lines }}
   </p>
   <img src="static/comedy.jpg" alt= pic class="center" height=5%>
 
-  {% if isFilled %}
+  {% if isLoggedIn %}
 
-      <form action="/save" method="POST">
-           <input type="hidden" id="prompt" name="prompt" value="No laughing matter">    
-          <input type="hidden" id="content" name="content" value="{{lines}}"> 
+      <form action="/save" method="POST" style="padding:15px;">
+           <input type="hidden" id="prompt" name="prompt" value="No laughing matter">
+          <input type="hidden" id="content" name="content" value="{{lines}}">
           <input type="submit" value="Save post">
       </form>
 

@@ -38,9 +38,9 @@
   <img src="static/stealingyoheart.jpg" width=50% class="center">
 
 
-  {% if isFilled %}
+  {% if isLoggedIn %}
 
-      <form action="/save" method="POST">
+      <form action="/save" method="POST" style="padding:15px;">
            <input type="hidden" id="prompt" name="prompt" value="On the run">
           <input type="hidden" id="content" name="content" value="{{lines}}">
           <input type="submit" value="Save Post">
