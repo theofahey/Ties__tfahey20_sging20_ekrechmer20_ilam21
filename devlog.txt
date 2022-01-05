@@ -68,3 +68,11 @@ SeanG -- 01-03-2022(15:29)
   Added full functionality to the database and implemented in all three scenarios. The person working on the      madlibs prompts (Ivan) needs to fix it to pass it in as lines. Added signup, login, session, tables, view saved madlibs, save madlibs, and some robustness to prevent errors. 
 TheoF -- 01-04-2022(8:40)
   Created RadLibs Logo, and formatted Signup Page
+EllaK -- 01-04-2022(8:40)
+  Added form error handling
+  Formatted for log in, save, and sign up
+EllaK -- 01-04-2022(9:21)
+  Reformateed sign up page to match Theo's work and make it look cleaner, included errors
+EllaK -- 01-04-2022(19:35)
+  Looked through all of site and fixed bugs
+  Added content to fill in section
