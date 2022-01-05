@@ -1,10 +1,10 @@
 # RadLibs by TIES (Theodore Fahey (PM), Ella Krechmer, Sean Ging, and Ivan Lam)
 
 ## Roster
-Theodore Fahey - PM, Managed group, Implemented API's. 
-Ella Krechmer - Wrote Stories, Used Bootstrap and CSS to jazz up the site.
-Sean Ging- Implemented history and login feature with sqlite3
-Ivan Lam- Created and implemented the RADLIBS forms. 
+* Theodore Fahey - PM, Managed group, Implemented API's. 
+* Ella Krechmer - Wrote Stories, Front End Design with CSS and Bootstrap.
+* Sean Ging- Implemented login, signup, save Radlibs and show Radlibs
+* Ivan Lam- Created and implemented the Radlibs forms. 
 
 ## App Description
 RadLibs, our innovative new project, strives to challenge our users minds with boggling word games. We use fun and inspiring themes and give our users the freedom to create stories of their own.
