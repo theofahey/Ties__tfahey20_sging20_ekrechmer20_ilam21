@@ -1,9 +1,9 @@
 # RadLibs by TIES (Theodore Fahey (PM), Ella Krechmer, Sean Ging, and Ivan Lam)
 
 ## App Description
-"RADLIBS", our innovative new project, strives to challenge our users minds with boggling word games. We use fun and inspiring themes and give our users the freedom to create stories of their own.
+RadLibs, our innovative new project, strives to challenge our users minds with boggling word games. We use fun and inspiring themes and give our users the freedom to create stories of their own.
 
-## Installation
+## Launch Codes
 The following instructions assume that you have [Python 3.9](https://www.python.org/downloads/ "Download Python") and [pip](https://pip.pypa.io/en/stable/installation. "Install pip") already installed.
 
 1. Clone this repository.
