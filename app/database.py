@@ -37,7 +37,7 @@ class MadlibTable:
         self._cursor.execute(f"CREATE TABLE IF NOT EXISTS {self._name} (username TEXT, madlib TEXT, topic TEXT);")
 
     def makeEntry(self, username, madlib, topic):
-        self._cursor.execute(f"INSERT INTO {self._name} VALUES(\"{username}\", \"{madlib}\", \"{topic}\");")
+        self._cursor.execute(f"INSERT INTO {self._name} VALUES(\'{username}\', \'{madlib}\', \'{topic}\');")
         self._db.commit()
 
     def idExists(self, id: int):

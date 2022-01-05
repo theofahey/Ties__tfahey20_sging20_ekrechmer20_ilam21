@@ -40,7 +40,7 @@ def replace(story, words):
 
     return output
 
- 
+
 @app.route("/", methods=['GET', 'POST'])
 def start():
     return render_template("index.html",
@@ -57,12 +57,12 @@ def signup():
     passauth= request.args['passauth']
     if (username=="" or password==""):
         return render_template('signup.html', syntaxerror="Cannot submit blank username or password")
+    elif (password!=passauth):
+        return render_template('signup.html', syntaxerror="Passwords must match")
     elif not userpass.userExists(username):
         userpass.insert(username, password) # committing actions to database must be done every time you commit a command
         session["username"]=username
         return redirect("/loggedin")
-    elif (password!=passauth):
-        return render_template('signup.html', passerror="Passwords must match")
     else:
         return render_template('signup.html', syntaxerror = "This username already exists")
 
@@ -74,11 +74,11 @@ def login():
     password= request.args['password']
 
     if (username=="" or password==""):
-        return render_template('login.html', syntaxerror="Cannot submit blank username or password")
+        return render_template('index.html', error="Cannot submit blank username or password")
     elif not userpass.userExists(username):
-        return render_template('login.html', syntaxerror="Username does not exist")
+        return render_template('index.html', error="Username does not exist")
     elif not userpass.passMatch(username, password):
-        return render_template('login.html', syntaxerror = "Incorrect password")
+        return render_template('index.html', error = "Incorrect password")
     else:
         session["username"] = username
         return redirect('/loggedin')
@@ -97,6 +97,12 @@ def _dispsignuppage():
 def loggedin(): # does not show info in URL, shows /loggedin instead
     return redirect("/")
 
+@app.route("/logout")
+def logout():
+    #if "username" in session:
+    session["username"] = None
+    session.pop("username", None)
+    return redirect('/')
 
 @app.route("/create", methods=["GET", "POST"])
 def create():
@@ -150,10 +156,10 @@ def kanye_east():
     if request.method == "POST":
         for b in range(1,13):
             words.append(request.form[str(b)])
-    words.insert(0, title1)
+    words.insert(0, title1.title())
     words.insert(2, x["quote"])
     #words.insert(7, words[3])
-    words.insert(12, title2)
+    words.insert(12, title2.title())
     # print(words)
     lines = replace(lines, words)
 
