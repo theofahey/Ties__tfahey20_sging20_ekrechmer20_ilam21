@@ -86,6 +86,7 @@
   {% if not isLoggedIn %}
   <h6 style="padding-top:20px; padding-left:20px; padding-bottom:10px; font-family:Helvetica; font-size: 18px;">Want to save your stories? Log In or Create an Account</h6>
   <form action="/login" style="padding-left:20px; font-family:Helvetica;">
+      <p style="color:red;">{{error}}</p>
       <h6>Username: </h6>
       <input type="text" name="username">
       <br>
@@ -102,7 +103,7 @@
 
   {% else %}
   <div style="padding: 20px;">
-    <a href="/viewPosts" type="button" class="btn btn-primary" style="padding:7px;">View your madlibs!</a>
+    <a href="/viewPosts" type="button" class="btn btn-primary" style="padding:7px;">View your Radlibs!</a>
   </div>
 
   {% endif %}

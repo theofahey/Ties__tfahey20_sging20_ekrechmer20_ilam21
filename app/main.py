@@ -74,11 +74,11 @@ def login():
     password= request.args['password']
 
     if (username=="" or password==""):
-        return render_template('login.html', syntaxerror="Cannot submit blank username or password")
+        return render_template('index.html', error="Cannot submit blank username or password")
     elif not userpass.userExists(username):
-        return render_template('login.html', syntaxerror="Username does not exist")
+        return render_template('index.html', error="Username does not exist")
     elif not userpass.passMatch(username, password):
-        return render_template('login.html', syntaxerror = "Incorrect password")
+        return render_template('index.html', error = "Incorrect password")
     else:
         session["username"] = username
         return redirect('/loggedin')
@@ -150,10 +150,10 @@ def kanye_east():
     if request.method == "POST":
         for b in range(1,13):
             words.append(request.form[str(b)])
-    words.insert(0, title1)
+    words.insert(0, title1.title())
     words.insert(2, x["quote"])
     #words.insert(7, words[3])
-    words.insert(12, title2)
+    words.insert(12, title2.title())
     # print(words)
     lines = replace(lines, words)
 
